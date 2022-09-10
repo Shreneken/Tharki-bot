@@ -7,6 +7,7 @@ client = discord.Client()
 async def on_ready():
   print('We have logged in as {0.user}'.format(client))
 
+#Secret condition to trigger the bot
 def condition():
   @client.event
   async def on_message(message):
@@ -23,7 +24,7 @@ def read_message():
   async def on_message(message):  
     if message.author == client.user:
         return
-
+#Secret condition 2
     if message.content.startswith('-tharki' or 'THARKI'):
        await message.channel.send (" tai tharki muji ")
 
@@ -36,7 +37,8 @@ def read_message():
     if message.content.startswith('ma bakhra ho'):
       await message.channel.send (' ta bhakhra hos ra? (ye/no)')
       condition()
-      
+
+#Send a warning to users using words from the profanity lsit
     f = open("profranity_wordlist.txt", "r")
     lines = [line.rstrip() for line in f]
     for word in lines:
