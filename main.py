@@ -41,7 +41,7 @@ def read_message():
     lines = [line.rstrip() for line in f]
     for word in lines:
       if word in message.content:
-        await message.channel.send (f'Fuck you {word}')
+        await message.channel.send (f'WARNING: Please dont use curse words! {word}')
 
         
 
